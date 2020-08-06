@@ -5,8 +5,26 @@
     "functions": [],
     "variables": {},
     "resources": [
+        { 
+            "name": "komaldemodbsever/KomalDemoDB",
+            "type": "Microsoft.Sql/servers/databases",
+            "apiVersion": "2014-04-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "KomalDB"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', 'komaldemodbsever')]"
+            ],
+            "properties": {
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "edition": "Basic",
+                "maxSizeBytes": "1073741824",
+                "requestedServiceObjectiveName": "Basic"
+            }
+        },
         {
-            "name": "appServiceDemoPlan",
+            "name": "SampleDemo",
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2018-02-01",
             "location": "[resourceGroup().location]",
@@ -15,29 +33,31 @@
                 "capacity": 1
             },
             "tags": {
-                "displayName": "appServiceDemoPlan"
+                "displayName": "SampleDemo"
             },
             "properties": {
-                "name": "appServiceDemoPlan"
+                "name": "SampleDemo"
             }
         },
+
         {
-            "name": "appServiceDemoPlan2",
+            "name": "WebAppDemo",
             "type": "Microsoft.Web/sites",
             "apiVersion": "2018-11-01",
             "location": "[resourceGroup().location]",
             "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
-                "displayName": "appServiceDemoPlan2"
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/SampleDemo')]": "Resource",
+                "displayName": "WebAppDemo"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+                "[resourceId('Microsoft.Web/serverfarms', 'SampleDemo')]"
             ],
             "properties": {
-                "name": "appServiceDemoPlan2",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+                "name": "WebAppDemo",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'SampleDemo')]"
             }
         }
+    
     ],
     "outputs": {}
 }

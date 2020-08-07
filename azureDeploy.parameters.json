@@ -2,134 +2,41 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "administratorLogin": {
-            "value": "komal996"
+        "subscriptionId": {
+            "value": "8c615542-b27e-450a-aad4-c1ba2e5eaf62"
         },
-        "administratorLoginPassword": {
-            "value": null
-        },
-        "collation": {
-            "value": "SQL_Latin1_General_CP1_CI_AS"
-        },
-        "databaseName": {
-            "value": "Sample_MySQL_DB"
-        },
-        "tier": {
-            "value": "GeneralPurpose"
-        },
-        "skuName": {
-            "value": "GP_Gen5_2"
+        "name": {
+            "value": "SampleApp09"
         },
         "location": {
-            "value": "northeurope"
+            "value": "North Europe"
         },
-        "maxSizeBytes": {
-            "value": 34359738368
-        },
-        "sampleName": {
+        "hostingEnvironment": {
             "value": ""
         },
-        "serverName": {
-            "value": "samplemysqldb1"
+        "hostingPlanName": {
+            "value": "ASP-RGMySQLPOC-aff0"
         },
-        "licenseType": {
-            "value": "LicenseIncluded"
+        "serverFarmResourceGroup": {
+            "value": "RG-MySQL-POC"
         },
-        "readScaleOut": {
-            "value": "Disabled"
-        },
-        "zoneRedundant": {
+        "alwaysOn": {
             "value": false
         },
-        "numberOfReplicas": {
-            "value": 0
+        "currentStack": {
+            "value": "dotnetcore"
         },
-        "enableADS": {
-            "value": true
+        "phpVersion": {
+            "value": "OFF"
         },
-        "allowAzureIps": {
-            "value": true
+        "errorLink": {
+            "value": "https://SampleApp09.scm.azurewebsites.net/detectors?type=tools&name=eventviewer"
         },
-        "allowClientIp": {
-            "value": false
+        "sites_WebApi0606_name": {
+            "value": "API0109"
         },
-        "clientIpValue": {
-            "value": "103.41.24.144"
-        },
-        "databaseTags": {
-            "value": {}
-        },
-        "serverTags": {
-            "value": {}
-        },
-        "enableVA": {
-            "value": true
-        },
-        "useVAManagedIdentity": {
-            "value": false
-        },
-        "enablePrivateEndpoint": {
-            "value": false
-        },
-        "privateEndpointNestedTemplateId": {
-            "value": "pe-fb0de1c9-b5ce-4324-974f-7c8b3630400d"
-        },
-        "privateEndpointSubscriptionId": {
-            "value": ""
-        },
-        "privateEndpointResourceGroup": {
-            "value": ""
-        },
-        "privateEndpointName": {
-            "value": ""
-        },
-        "privateEndpointLocation": {
-            "value": ""
-        },
-        "privateEndpointSubnetId": {
-            "value": ""
-        },
-        "privateLinkServiceName": {
-            "value": ""
-        },
-        "privateLinkServiceServiceId": {
-            "value": ""
-        },
-        "privateEndpointVnetSubscriptionId": {
-            "value": ""
-        },
-        "privateEndpointVnetResourceGroup": {
-            "value": ""
-        },
-        "privateEndpointVnetName": {
-            "value": ""
-        },
-        "privateEndpointSubnetName": {
-            "value": ""
-        },
-        "enablePrivateDnsZone": {
-            "value": true
-        },
-        "privateLinkPrivateDnsZoneFQDN": {
-            "value": "privatelink.database.windows.net"
-        },
-        "privateEndpointDnsRecordUniqueId": {
-            "value": "fb0de1c9-b5ce-4324-974f-7c8b36304010"
-        },
-        "privateEndpointTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0130857/DeploymentTemplates/PrivateEndpoint.json"
-        },
-        "privateDnsForPrivateEndpointTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0130857/DeploymentTemplates/PrivateDnsForPrivateEndpoint.json"
-        },
-        "privateDnsForPrivateEndpointNicTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0130857/DeploymentTemplates/PrivateDnsForPrivateEndpointNic.json"
-        },
-        "privateDnsForPrivateEndpointIpConfigTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0130857/DeploymentTemplates/PrivateDnsForPrivateEndpointIpConfig.json"
-        },
-        "clientIpRuleName": {
-            "value": "ClientIp-2020-8-6_13-14-18"
+        "serverfarms_ASP_RGMySQLPOC_aff0_externalid": {
+            "value": null
         }
     }
 }
